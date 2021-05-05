@@ -1,11 +1,18 @@
-def spiralize(number):
-    return_value = 1
-    diagonal = (number - 1) // 2
-    return_value = (
-        diagonal * (8 * diagonal * diagonal + 13 + diagonal * 15) * 2 + 3
-    ) / 3
+def spiralize(size, n=1):
+    x = n
+    counter = 0
+    incrt = 2
+    Current_num = n
+    total = 0
 
-    return return_value
+    while Current_num <= pow(size, 2) - 1:
+        Current_num += incrt
+        x += Current_num
+        total += 1
+        if total == 4:
+            incrt += 2
+            total = 0
 
+    return x
 
-print(spiralize(501))
+    print(spiralize(501, 15))
