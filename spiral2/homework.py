@@ -2,17 +2,16 @@ def spiralize(size, n=1):
     x = n
     counter = 0
     incrt = 2
-    Current_num = n
     total = 0
 
-    while Current_num <= pow(size, 2) - 1:
-        Current_num += incrt
-        x += Current_num
-        total += 1
+    while x <= size ** 2:
+        total += x
+        x += incrt
+        counter += 1
         if total == 4:
             incrt += 2
-            total = 0
+            counter = 0
 
-    return x
+    return total
 
     print(spiralize(501, 15))
